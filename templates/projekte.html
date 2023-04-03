@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card" id="projekt" style="margin-top: 100px;">
+  <h1 class="card-header" id="projekttitel">BLOG</h1>
+  <div class="card-body">
+    <p class="card-text">Basierend auf Django 4.1.6 ein Blog, in dem Leser:innen pseudonymisiert kommentieren können. Die Beitragslinks werden mit der Slug-Funktion, basierend auf dem Beitragstitel, generiert.<br><br> Für jeden Beitrag kann optional ein Bild hochgeladen werden. Beim UI habe ich mich bei Bootstrap bedient.</p>
+    <a id="projektlink" href="{% url 'home' %}" class="btn btn-primary">Projektlink</a>
+    <a id="githublink" href="#" class="btn btn-primary">GitHub</a>
+  </div>
+</div>
+<div class="card" id="projekt">
+  <h1 class="card-header" id="projekttitel">ANMESY</h1>
+  <div class="card-body">
+    <p class="card-text">Ein einfaches, anonymes Hinweisgebersystem in Python und Django. Der Name setzt sich zusammen aus <strong>AN</strong>onymes <strong>ME</strong>lde<strong>SY</strong>stem und hat, aufgrund der Konfiguration, eine gewollte Nähe zu den Worten Amnesie und Amnestie. Die Meldungen selbst sind über den Adminbereich einsehbar.</p>
+    <p>Benutzt werden Crispy Forms, aber selbstverständlich ist das ganze auch mit den native forms von Django nutzbar.</p>
+    <a id="projektlink" href="{% url 'meldung' %}" class="btn btn-primary">Projektlink</a>
+    <a id="githublink" href="https://github.com/k0nfus/ANMESY" class="btn btn-primary">GitHub</a>
+  </div>
+</div>
+<div class="card" id="projekt">
+  <h1 class="card-header" id="projekttitel">DOKUSYS</h1>
+  <div class="card-body">
+    <p class="card-text">Ein einfaches Dokumentationssystem für Sozialarbeiter:innen für die nachvollziehbare Arbeit mit ihren Klient:innen. In das Formular für den jeweiligen Eintrag ist auch ein Bildupload integriert. Die Demoversion funktioniert ohne Anmeldung, während die WebApp in der Production nur authentifizierte Nutzer:innen Lese- und Schreibberechtigung gibt, die vorher von einer Nutzer:in mit entsprechenden Administrationsrechten freigegeben wurden. </p>
+    <p>Auch dieses Projekt lässt sich zu 100% an die unterschiedlichsten Bedürfnisse anpassen. Eine Überlegung könnten automatisierte Auswertungen und Übergabe in die Statistik während oder nach dem Betreuungsende sein.</p>
+    <a id="projektlink" href="{% url 'start' %}" class="btn btn-primary">Projektlink</a>
+    <a id="githublink" href="#" class="btn btn-primary">GitHub</a>
+  </div>
+</div>
+{% endblock content %}

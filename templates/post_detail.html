@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load markdown_extras %}
+{% block content %}
+
+<div id="beitrag">
+  <center><h1 id="titel"><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h1></center>
+  <p id="datum">{{ post.date }} Uhr</p>
+  {% if post.image %}
+  <center><img src="{{ post.image.url }}" class="img-fluid"></center>
+  {% endif %}
+  <p>{{ post.body | markdown | safe | linebreaks }}</p>
+
+  <div class="" style="">
+    <strong><p style="color: orangered;">Kommentare:</p></strong>
+    {% for comment in post.comment_set.all %}
+    <p style="color: orangered;">{{ comment.author }} | <span style="color: black;">{{ comment }}</span></p>
+    {% endfor %}
+    <form action="" method="post">{% csrf_token %}
+      {{ form|crispy }}
+    <button class="btn btn-success ml-2" type="submit" style="margin-top: 10px;">Kommentieren</button>
+    </form>
+  </div>
+
+</div>
+
+{% endblock content %}
